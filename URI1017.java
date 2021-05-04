@@ -1,3 +1,5 @@
+// https://www.urionlinejudge.com.br/judge/pt/problems/view/1017
+
 import java.util.Scanner;
 
 public class URI1017{
