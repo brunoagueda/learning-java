@@ -7,13 +7,13 @@ public class URI1017{
     public static void main(String args[]){
 
         Scanner teclado = new Scanner(System.in);
-        int time, dist;
+        int tempo, velocidade;
         double litros;
 
-        time = teclado.nextInt();
-        dist = teclado.nextInt();
+        tempo = teclado.nextInt();
+        velocidade = teclado.nextInt();
 
-        litros = (double)time * dist / 12 ;
+        litros = (double)tempo * velocidade / 12 ;
 
         System.out.printf("%.3f\n", litros);
 
