@@ -8,26 +8,27 @@ public class URI1021{
 
         // Define variaveis
         Scanner teclado = new Scanner(System.in);
-        double valor, aux;
-        int nota100, nota50, nota20, nota10, nota5, nota2, moeda1, moeda050, moeda025, moeda010, moeda005, moeda001;
+        double valor;
+        int nota100, nota50, nota20, nota10, nota5, nota2, moeda1, moeda050, moeda025, moeda010, moeda005, moeda001, reais, cents;
 
         // Recebe entrada
         valor = teclado.nextDouble();
+        reais = (int)valor;
+        cents = (int)((valor - reais) * 100) ;
 
         // Processamento
-        nota100 = (int)valor / 100;
-        nota50 = ((int)valor % 100) / 50;
-        nota20 = ((int)valor % 100 % 50) / 20;
-        nota10 = ((int)valor % 100 % 50 % 20) / 10;
-        nota5 = ((int)valor % 100 % 50 % 20 % 10) / 5;
-        nota2 = ((int)valor % 100 % 50 % 20 % 10 % 5) / 2;
-        moeda1 = ((int)valor % 100 % 50 % 20 % 10 % 5 % 2);
-        aux = (valor - nota100*100 - nota50*50 - nota20*20 - nota10*10 -nota5*5 - nota2*2 - moeda1);
-        moeda050 = (int)(aux / 0.5 );
-        moeda025 = (int)((aux % 0.5 ) / 0.25 );
-        moeda010 = (int)((aux % 0.5 % 0.25 ) / 0.10);
-        moeda005 = (int)((aux % 0.5 % 0.25 % 0.10 ) / 0.05 );
-        moeda001 = (int)((aux % 0.5 % 0.25 % 0.10 % 0.05 ) / 0.01 );
+        nota100 = reais / 100;
+        nota50 = (reais % 100) / 50;
+        nota20 = (reais % 100 % 50) / 20;
+        nota10 = (reais % 100 % 50 % 20) / 10;
+        nota5 = (reais % 100 % 50 % 20 % 10) / 5;
+        nota2 = (reais % 100 % 50 % 20 % 10 % 5) / 2;
+        moeda1 = (reais % 100 % 50 % 20 % 10 % 5 % 2);
+        moeda050 = (cents / 50 );
+        moeda025 = (cents % 50 ) / 25 ;
+        moeda010 = (cents % 50 % 25 ) / 10;
+        moeda005 = (cents % 50 % 25 % 10 ) / 5 ;
+        moeda001 = (cents % 50 % 25 % 10 % 5 );
 
         // Saida
         System.out.println("NOTAS:");
@@ -44,6 +45,7 @@ public class URI1021{
         System.out.println(moeda010 + " moeda(s) de R$ 0.10");
         System.out.println(moeda005 + " moeda(s) de R$ 0.05");
         System.out.println(moeda001 + " moeda(s) de R$ 0.01");
+        
         
     }
 }
