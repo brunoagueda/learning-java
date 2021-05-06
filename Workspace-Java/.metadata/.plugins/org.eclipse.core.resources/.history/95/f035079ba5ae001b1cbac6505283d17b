@@ -1,0 +1,74 @@
+import java.util.Scanner;
+
+public class Operacao {
+	public static void main(String args[]) {
+		
+		Scanner teclado = new Scanner(System.in);
+		Conta c1;
+		int aux;
+		double valor;
+		double saldo;
+		
+		c1 = new Conta();
+		
+		c1.setNumConta(12345);
+		c1.setDigVerif(6);
+		c1.setTitular("Bruno Agueda");
+		c1.setCpf("123.456.789-10");
+		saldo = c1.getSaldo();
+		
+		
+		
+		
+		System.out.println("Digite a opção desejada ou 0 para sair:");
+		System.out.println("1 - Deposito");
+		System.out.println("2 - Saque");
+		System.out.println("3 - Consulta");
+		
+		do {
+			aux = teclado.nextInt();
+			
+			switch (aux) {
+			case 1:
+				System.out.println("Qual valor deseja depositar?");
+				valor = teclado.nextDouble();
+				
+				saldo = c1.depositar(valor, saldo);
+				
+				//saldo = saldo + valor;
+				System.out.println("Valor depositado com sucesso");
+				
+				break;
+			case 2:
+				System.out.println("Qual valor deseja sacar?");
+				valor = teclado.nextDouble();
+				if(valor <= saldo) {
+					saldo = saldo - valor;
+					System.out.println("Valor sacado com sucesso!");
+				}
+				else {
+					System.out.println("Saldo insuficiente para a operacao, saque nao realizado");
+				}
+				
+				break;
+				
+			case 3:
+				c1.getInfo(saldo);
+				break;
+			
+			case 0:
+				
+				break;
+				
+			default:
+				System.out.println("Opcao invalida");
+				break;
+			}
+				
+		}
+		while(aux != 0);
+		
+		teclado.close();
+	}
+	
+}

@@ -1,0 +1,22 @@
+
+public class Operacao {
+	public static void main(String args[]) {
+		
+	
+		Conta c1;
+		
+		c1 = new Conta();
+		
+		c1.setNumConta(12345);
+		c1.setDigVerif(6);
+		c1.setTitular("Bruno Agueda");
+		c1.setCpf("123.456.789-10");
+		
+		System.out.println("Numero da conta: " + c1.getNumConta() + " Dig.: " + c1.getDigVerif());
+		System.out.println("Nome do titular: " + c1.getTitular());
+		System.out.println("CPF do titular: " + c1.getCpf());
+		System.out.println("Saldo em conta: R$ " + c1.getSaldo());
+		
+	}
+	
+}
