@@ -44,11 +44,9 @@ public class Conta {
 		return saldo;
 	}
 	
-	public void getInfo() {
-		System.out.println("Numero da conta: " + numConta + " Dig.: " + digVerif);
-		System.out.println("Nome do titular: " + titular);
-		System.out.println("CPF do titular: " + cpf);
-		System.out.printf("Saldo em conta: R$ %.2f\n" , saldo);
+	public String getInfo() {
+		String msg = "Numero da conta: " + numConta + " Dig.: " + digVerif + "\n" + "Nome do titular: " + titular + "\n" + "CPF do titular: " + cpf + String.format("Saldo em conta: R$ %.2f\n" , saldo);  
+		return msg;
 	}
 	
 	public double depositar(double valor) {

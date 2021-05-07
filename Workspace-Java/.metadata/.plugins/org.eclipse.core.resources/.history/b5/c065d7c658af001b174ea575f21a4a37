@@ -1,0 +1,31 @@
+package Pagamentos;
+
+import java.util.Scanner;
+
+import InfoRH.Funcionario;
+
+public class Reajuste {
+	public static void main(String args[]) {
+		
+		Scanner teclado = new Scanner(System.in);
+		int reajuste;
+		Funcionario func1;
+		Funcionario func2;
+		Funcionario func3;
+		
+		func1 = new Funcionario(1234,  "Joao Iboia", "jiboia@isidrocorp.com.br", 5000);
+		func2 = new Funcionario(5678, "Maria Olenga", "molenga@isidrocorp.com.br", 5500);
+		func3 = new Funcionario(91011, "Jorge Aburu", "jaburu@isidrocorp.com.br", 6000);
+		
+		reajuste = teclado.nextInt();
+		
+		func1.calcularValorImposto(reajuste);
+		func2.calcularValorImposto(reajuste);
+		func3.calcularValorImposto(reajuste);
+		
+		func1.getInfo();
+		func2.getInfo();
+		func3.getInfo();
+		
+	}
+}

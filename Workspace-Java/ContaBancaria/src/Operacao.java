@@ -46,7 +46,7 @@ public class Operacao {
 					break;
 					
 				case 3:
-					c1.getInfo();
+					System.out.println(c1.getInfo());
 					
 					break;
 				

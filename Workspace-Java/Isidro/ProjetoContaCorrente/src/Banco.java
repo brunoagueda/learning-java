@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Banco {
 	public static void main(String[] args) {
@@ -29,15 +30,16 @@ public class Banco {
 				System.out.print("----> Digite o valor a sacar");
 				valor = teclado.nextDouble();
 				if (conta.sacar(valor)) {
-					System.out.println("       SAQUE EFETUADO!");
+					JOptionPane.showMessageDialog(null, "Saque Efetuado","Sucesso", JOptionPane.INFORMATION_MESSAGE);
 				}
 				else {
-					System.out.println("       SALDO INSUFICIENTE");
+					JOptionPane.showMessageDialog(null, "Saldo Insuficiente", "Erro", JOptionPane.ERROR_MESSAGE);
 				}
 				break;
 			case 3:
-				System.out.println("----> Informações da Conta");
-				System.out.println(conta.exibirInfo());
+				//System.out.println("----> Informações da Conta");
+				//System.out.println(conta.exibirInfo());
+				JOptionPane.showMessageDialog(null, conta.exibirInfo());
 				break;
 			default:
 				System.out.println("Opcao invalida!");				

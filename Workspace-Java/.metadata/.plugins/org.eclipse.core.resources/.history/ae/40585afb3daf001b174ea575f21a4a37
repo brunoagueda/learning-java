@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class Posto {
+	public static void main(String args[]) {
+		
+		Scanner teclado = new Scanner(System.in);
+		
+		int aux;
+		double valorGasolina = 5.00;
+		double valorEtanol = 3.50;
+		double leitura;
+		
+		BombaCombustivel b1;
+		
+		b1 = new BombaCombustivel();
+		
+		do {
+			aux = teclado.nextInt();
+			if(aux == 1) {
+				b1.setTipoCombustivel("Gasolina");
+				b1.setPrecoLitro(valorGasolina);
+			}
+			else if(aux == 2){
+				b1.setTipoCombustivel("Etanol");
+				b1.setPrecoLitro(valorEtanol);
+			}
+			else {
+				System.out.println("Opcao invalida");
+			}
+			aux = teclado.nextInt();
+			if(aux == 1) { //opcao para abastecer em $
+				leitura = teclado.nextDouble();
+				b1.setTotalPagar(leitura);
+				
+			}
+			else if(aux == 2) { // opcao para abastecer em litros
+				leitura = teclado.nextDouble();
+				b1.setQtdeLitros(leitura);
+				
+			}
+			b1.getRecibo();
+			
+		} while (aux != 0);
+		
+		teclado.close();
+	}
+}
