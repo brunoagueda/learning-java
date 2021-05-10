@@ -7,6 +7,8 @@ public class Biblioteca {
 		l2 = new Livro();
 		l3 = new Livro();
 		
+		l1.exibirLivro();
+		
 		l1.setTitulo("Java para iniciantes");
 		l1.setAutor("Prof. Isidro");
 		l1.setAnoPublicacao(2021);;
@@ -21,13 +23,13 @@ public class Biblioteca {
 		l2.setNumEstante(5);
 		l2.setNumPrateleira(9);
 		
-		l1.exibirLivro();
-		l2.exibirLivro();
-		
-		l1.emprestar();
-		System.out.println("-----------> após emprestimo do livro "+l1.getTitulo());
-		l1.exibirLivro();
-		l2.exibirLivro();
+//		l1.exibirLivro();
+//		l2.exibirLivro();
+//		
+//		l1.emprestar();
+//		System.out.println("-----------> após emprestimo do livro "+l1.getTitulo());
+//		l1.exibirLivro();
+//		l2.exibirLivro();
 	}
 
 }

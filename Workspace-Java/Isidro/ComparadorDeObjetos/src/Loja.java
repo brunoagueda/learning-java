@@ -18,7 +18,7 @@ public class Loja {
 		
 		
 		String s1 = new String("Oi, quer tc?");
-		String s2 = new String("Oi, quer tc?");
+		String s2 = new String("Oi, quer tc?");  // se comporta exatamente como se fosse s2 = s1;
 		
 		if (s1.equals(s2)) {
 			System.out.println("Iguais");
